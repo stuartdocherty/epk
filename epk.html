@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuart Docherty</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0b0e',
+                        cardBg: '#141419',
+                        cardBorder: '#262630',
+                        accentGold: '#d17ad7',
+                        accentStuart: '#37d1d4',
+                        accentCyan: '#00f0ff',
+                        accentPurple: '#8b5cf6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }                    
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar styling for dark metal theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0b0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262630;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+
+        /* Subtle metallic glow effects */
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+        .text-glow {
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-200 font-sans antialiased selection:bg-accentGold selection:text-black">
+
+    <nav class="sticky top-0 z-50 bg-darkBg/90 backdrop-blur-md border-b border-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Logo -->
+                <div class="flex items-center gap-3">
+                    <span class="font-display font-extrabold text-xl sm:text-2xl tracking-wider text-white">
+                        STUART <span class="text-accentGold">DOCHERTY</span>
+                    </span>                   
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#about" class="hover:text-accentGold transition-colors">Overview</a>
+                    <a href="#bands" class="hover:text-accentGold transition-colors">Bands</a>
+                    <a href="#live" class="hover:text-accentGold transition-colors">Live Performance</a>
+                    <a href="#tour" class="hover:text-accentGold transition-colors">Tour & Festivals</a>
+                    <a href="#proposal" class="hover:text-accentGold transition-colors">Bio</a>
+                    <a href="#contact" class="bg-accentGold text-black hover:bg-yellow-400 font-bold px-4 py-2 rounded-lg transition-all shadow-md">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-cardBg border-b border-cardBorder px-4 pt-2 pb-4 space-y-2 text-sm">
+            <a href="#about" class="block py-2 hover:text-accentGold">Overview</a>
+            <a href="#bands" class="block py-2 hover:text-accentGold">Bands</a>
+            <a href="#live" class="block py-2 hover:text-accentGold">Live Performance</a>
+            <a href="#tour" class="block py-2 hover:text-accentGold">Tour & Festivals</a>
+            <a href="#proposal" class="block py-2 hover:text-accentGold">Bio</a>
+            <a href="#contact" class="block py-2 text-accentGold font-bold">Contact</a>
+        </div>
+    </nav>
+
+    <header id="about" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-grid-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column: Intro Text & Key Stats -->
+                <div class="lg:col-span-7 space-y-6">                  
+                    
+                    <h1 class="font-display text-4xl sm:text-6xl font-black text-white uppercase tracking-tight leading-none">
+                        Stuart <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentGold via-purple-200 to-purple-500">Docherty</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-gray-300 font-light leading-relaxed">                        
+                            Lead & Rhythm Guitarist for <span class="text-accentGold font-semibold"><a href="https://www.instagram.com/dragonlandband"><u>Dragonland</u></a></span> and <span class="text-accentGold font-semibold"><a href="https://www.instagram.com/ascensionbanduk"><u>Ascension</u></a></span>.<br>
+                            Video game Composer and Sound Designer for <span class="text-accentGold font-semibold"><a href="https://www.goatsimulator3.com/"><u>Goat Simulator 3</u></a></span>. <br>
+                        
+                    <br>Playing fast, technical and melodic Power Metal guitar on international live stages and studio recordings.
+                            
+                    </p>
+
+                    <!-- Key Metrics Banner -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-cardBorder">
+                        <div class="bg-cardBg p-4 rounded-xl border border-cardBorder">
+                            <div class="text-2xl sm:text-3xl font-display font-extrabold text-green-400">72K+</div>
+                            <div class="text-xs text-gray-400 uppercase tracking-wider font-medium mt-1">Monthly Spotify Listeners</div>
+                        </div>
+                        <div class="bg-cardBg p-4 rounded-xl border border-cardBorder">
+                            <div class="text-2xl sm:text-3xl font-display font-extrabold text-accentGold">NEW</div>
+                            <div class="text-xs text-gray-400 uppercase tracking-wider font-medium mt-1">Album OCT 2026</div>
+                        </div>
+                        <div class="bg-cardBg p-4 rounded-xl border border-cardBorder col-span-2 sm:col-span-1">
+                            <div class="text-2xl sm:text-3xl font-display font-extrabold text-white">GLOBAL</div>
+                            <div class="text-xs text-gray-400 uppercase tracking-wider font-medium mt-1">Festivals and Shows</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-12 pt-8 border-t border-cardBorder flex flex-col sm:flex-row justify-center items-center text-l gap-6">
+                    <a href="https://www.instagram.com/sdochertymusic/" class="hover:text-accentGold"><i class="fa-brands fa-instagram text-base"></i></a>                    
+                    <a href="https://www.facebook.com/sdochertymusic/" class="hover:text-accentGold"><i class="fa-brands fa-facebook text-base"></i></a>
+                    <a href="https://open.spotify.com/artist/5qwH9gKvchSfuv8V6pBU71" class="hover:text-accentGold"><i class="fa-brands fa-spotify text-base"></i></a>
+                    <a href="https://www.youtube.com/@StuartDocherty" class="hover:text-accentGold"><i class="fa-brands fa-youtube text-base"></i></a>
+                </div>
+                </div>
+
+                <!-- Hero Right Column: Main Image (stuartwinter01.jpg) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame Glow -->
+                        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accentGold to-purple-600 opacity-30 blur-lg"></div>
+                        
+                        <div class="relative bg-cardBg border border-cardBorder rounded-2xl overflow-hidden shadow-2xl">
+                            <!-- EDITABLE IMAGE: stuartwinter01.jpg -->
+                            <img src="stuartwinter01.jpg" 
+                                 alt="Stuart Docherty - Power Metal Guitarist" 
+                                 class="w-full h-[450px] sm:h-[550px] object-cover object-top"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x800/141419/d4af37?text=stuartwinter01.jpg';">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6">                            
+                                <p class="text-white font-display font-bold text-lg">Stuart Docherty</p>
+                                <p class="text-xs text-gray-300">Guitarist & Composer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section id="live" class="py-20 bg-cardBg/50 border-y border-cardBorder relative">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">        
+                <h2 class="font-display text-3xl sm:text-5xl font-black text-white uppercase">
+                    LIVE
+                </h2>
+                <div class="h-1 w-20 bg-accentGold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Live Photo Showcase (schecter02.jpg) -->
+                <div class="lg:col-span-full">
+                    <div class="relative rounded-2xl overflow-hidden border border-cardBorder shadow-2xl group">
+                        <!-- EDITABLE IMAGE: schecter02.jpg -->
+                        <img src="schecter02.jpg" 
+                             alt="Stuart Docherty performing live with Schecter Guitar" 
+                             class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://se.concerts-metal.com/images/flyers/202606/1781631847--Tyr---Valhalla-Calling-Europe-Tour-2026.webp';">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                            <div class="text-white">
+                                <span class="bg-accentGold text-black text-xs font-bold uppercase px-2.5 py-1 rounded mb-2 inline-block">Schecter Blackjack ATX C1-FR</span>
+                                <p class="text-sm sm:text-base font-medium text-gray-200">
+                                    Recent performance at MadWithPower 2026, Madison, WI.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="lg:col-span-full justify-center overflow-hidden border border-cardBorder shadow-2xl group grid grid-cols-1 md:grid-cols-2 my-0 justify gap-16">
+                                                                                   
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/SzBryHMNIcA?si=O1u3tlCv0yL70l21" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/alX94HNfvks?si=ABNb2FW8lHCfFypu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                                           
+                </div>
+
+               
+            </div>
+        </div>
+    </section>
+
+    <section id="tour" class="py-10 bg-cardBg/30 border-y border-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">                
+                <h2 class="font-display text-3xl sm:text-5xl font-black text-white uppercase">
+                    Upcoming <span class="text-accentGold">Tours</span>
+                </h2>                
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Live Photo Showcase (schecter02.jpg) -->
+                <div class="lg:col-span-full">
+                    <div class="relative rounded-2xl overflow-hidden border border-cardBorder shadow-2xl group">
+                        <!-- EDITABLE IMAGE: schecter02.jpg -->
+                        <img src="valhalla.png" 
+                             alt="Stuart Docherty performing live with Schecter Guitar" 
+                             class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://i.imgur.com/gmzQHoN.png';">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                            <div class="text-white">
+                                <p class="text-sm sm:text-base font-medium text-gray-200">
+                                    Dragonland supporting Tyr, Winter 2026.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                      
+            </div>
+        </div>
+                
+               
+
+    </section>
+    
+    <section id="festivals" class="py-10 bg-cardBg/30 border-y border-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">                
+                <h2 class="font-display text-3xl sm:text-5xl font-black text-white uppercase">
+                    Major <span class="text-accentGold">Festivals</span>
+                </h2>                
+            </div>
+
+            <!-- Grid of 4 Major Festivals -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Festival 1: Mad With Power -->
+                <div class="bg-cardBg p-6 rounded-2xl border border-cardBorder relative overflow-hidden group hover:border-accentGold transition-all">
+                    <div class="absolute -right-4 -bottom-4 text-7xl text-white/5 group-hover:text-accentGold/10 transition-colors font-black">
+                        01
+                    </div>
+                    <span class="bg-accentGold/10 text-accentGold border border-accentGold/30 text-xs font-mono font-bold px-2.5 py-0.5 rounded uppercase">
+                        2026
+                    </span>
+                    <a href="https://www.facebook.com/madwithpowerfest/"><h3 class="font-display font-extrabold text-xl text-white mt-4 mb-1">MAD WITH POWER</h3></a>
+                    <p class="text-xs text-gray-400 mb-3">Madison, Wi</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Premier North American power metal festival - headliner.
+                    </p>
+                </div>
+
+                <!-- Festival 2: 70000 Tons of Metal -->
+                <div class="bg-cardBg p-6 rounded-2xl border border-cardBorder relative overflow-hidden group hover:border-accentGold transition-all">
+                    <div class="absolute -right-4 -bottom-4 text-7xl text-white/5 group-hover:text-accentGold/10 transition-colors font-black">
+                        02
+                    </div>
+                    <span class="bg-accentGold/10 text-accentGold border border-accentGold/30 text-xs font-mono font-bold px-2.5 py-0.5 rounded uppercase">
+                        2026
+                    </span>
+                    <a href="https://70000tons.com/history/lineup-stats-2026/"><h3 class="font-display font-extrabold text-xl text-white mt-4 mb-1">70000 TONS OF METAL</h3></a>
+                    <p class="text-xs text-gray-400 mb-3">Miani, Fl</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        The world's biggest heavy metal cruise featuring 60+ international bands.
+                    </p>
+                </div>
+
+                <!-- Festival 3: Masters of Rock -->
+                <div class="bg-cardBg p-6 rounded-2xl border border-cardBorder relative overflow-hidden group hover:border-accentGold transition-all">
+                    <div class="absolute -right-4 -bottom-4 text-7xl text-white/5 group-hover:text-accentGold/10 transition-colors font-black">
+                        03
+                    </div>
+                    <span class="bg-accentGold/10 text-accentGold border border-accentGold/30 text-xs font-mono font-bold px-2.5 py-0.5 rounded uppercase">
+                        2025
+                    </span>
+                    <a href="https://www.mastersofrock.cz/cs/koncerty/2025-masters-of-rock"><h3 class="font-display font-extrabold text-xl text-white mt-4 mb-1">MASTERS OF ROCK</h3></a>
+                    <p class="text-xs text-gray-400 mb-3">Vizovice, Czech Republic</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Massive open-air European metal festival.
+                    </p>
+                </div>
+
+                <!-- Festival 4: EpicFest -->
+                <div class="bg-cardBg p-6 rounded-2xl border border-cardBorder relative overflow-hidden group hover:border-accentGold transition-all">
+                    <div class="absolute -right-4 -bottom-4 text-7xl text-white/5 group-hover:text-accentGold/10 transition-colors font-black">
+                        04
+                    </div>
+                    <span class="bg-accentGold/10 text-accentGold border border-accentGold/30 text-xs font-mono font-bold px-2.5 py-0.5 rounded uppercase">
+                        2023
+                    </span>
+                    <a href="https://www.facebook.com/events/gimle/epic-fest-chapter-1-dawn-of-the-dragon-age/5275851565804404/"><h3 class="font-display font-extrabold text-xl text-white mt-4 mb-1">EPICFEST</h3></a>
+                    <p class="text-xs text-gray-400 mb-3">Roskilde, Denmark</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Major billing at the brand new power metal festival EpicFest. 
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <section id="proposal" class="py-10 bg-darkBg relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">                
+                <h2 class="font-display text-3xl sm:text-5xl font-black text-white uppercase">
+                    BIO
+                </h2>                
+            </div>
+            
+            <div class="bg-cardBg border border-cardBorder rounded-3xl p-8 sm:p-12 relative shadow-2xl">                                                 
+
+                <div class="space-y-6 text-gray-300 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        <b>Stuart Docherty</b> is a Guitarist, Composer and Sound Designer living in Stockholm, Sweden.<br><br>
+                        Originally from Scotland, Stuart has been playing guitar for more than 26 years across many different genres playing various models of left handed guitars. <br><br>
+                        With a classical music background and coming from roots in Scottish Folk Music he is known for fast, technical yet melodic guitar playing in European Power Metal.<br><br>
+                        Stuart holds a Master of Music in Sound Arts from the University of Aberdeen and also works as the Principle Sound Designer and Composer for Coffee Stain North in Stockholm, Sweden.
+                    </p>
+                    <p>Stuart has also worked and collaborated with many other bands including <a href="https://www.youtube.com/watch?v=qUXKMMsYXZs" class="text-accentGold font-semibold"><u>Sharky Sharky</u></a>, <a href="https://www.youtube.com/watch?v=qUXKMMsYXZs" class="text-accentGold font-semibold"><u>Fraser Edwards</u></a>, <a href="https://www.youtube.com/watch?v=qUXKMMsYXZs" class="text-accentGold font-semibold"><u> Autumn's Mourning</u></a> and Cult of Whispers.</p>
+                    
+                    <p align=center><iframe width="560" height="315" src="https://www.youtube.com/embed/3BCOrjoEuyQ?si=DEBHEt_wFiHPGvVL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    <section id="bands" class="py-20 bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>                    
+                    <h2 class="font-display text-3xl sm:text-5xl font-black text-white uppercase">
+                        Current <span class="text-accentGold">Bands</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Dragonland Card -->
+                <div class="bg-cardBg rounded-2xl border border-cardBorder p-8 relative flex flex-col justify-between hover:border-accentGold/50 transition-all">
+                    <!-- Album Release Badge -->
+                    <div class="absolute -top-3 right-6 bg-gradient-to-r from-accentGold to-amber-600 text-black text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow-lg">
+                        New Album Out Now!
+                    </div>
+
+                    <div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-accentGold/10 border border-accentGold/30 flex items-center justify-center text-accentGold font-bold text-xl">
+                                <i class="fa-solid fa-guitar"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black text-2xl text-white">DRAGONLAND</h3>
+                                <p class="text-xs text-accentGold font-mono uppercase">Symphonic Power Metal</p>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-gray-300 leading-relaxed mb-6">
+                            One of power metal's most respected names since founded in Gothenburg in 1999. Combining rich symphonic soundscapes with lightning-fast dual guitar harmonies and virtuoso solos. Their latest album "Phrophecies" was release in Oct 2026 and they are about to embark upon a European tour to support the release.
+                        </p>
+                    </div>
+
+                    <!-- Dragonland Stats Footer -->
+                    <div class="pt-6 border-t border-cardBorder flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-green-400 font-mono text-sm font-bold">
+                            <i class="fa-brands fa-spotify text-lg"></i>
+                            <span>72,000+ Monthly Listeners</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ascension Card -->
+                <div class="bg-cardBg rounded-2xl border border-cardBorder p-8 flex flex-col justify-between hover:border-accentGold/50 transition-all">
+                    <div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-accentPurple/10 border border-accentPurple/30 flex items-center justify-center text-accentPurple font-bold text-xl">
+                                <i class="fa-solid fa-guitar text-accentGold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black text-2xl text-white">ASCENSION</h3>
+                                <p class="text-xs text-accentGold font-mono uppercase">Technical Power Metal</p>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-gray-300 leading-relaxed mb-6">
+                            Scottish power metal act known for blazingly high-octane, relentless power metal focused on complex guitar fretwork, high tempos, and anthemic melodies. Recognized for intense live execution and technical proficiency.
+                        </p>
+                    </div>
+
+                    <!-- Ascension Stats Footer -->
+                    <div class="pt-6 border-t border-cardBorder flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-gray-300 font-mono text-sm font-bold">
+                            <i class="fa-solid fa-compact-disc text-accentGold"></i>
+                            <span>Active Recording</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contact" class="py-16 bg-cardBg border-t border-cardBorder text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                
+                <div class="md:col-span-6 space-y-3">
+                    <h3 class="font-display font-black text-2xl text-white">STUART DOCHERTY</h3>
+                    <p class="text-xs text-accentGold uppercase font-mono tracking-widest">Endorsement Contact & Booking</p>
+                    <p class="text-sm text-gray-400 max-w-sm">
+                        For endorsement inquiries, guitar specs, playthrough collaborations, or booking information.
+                    </p>
+                </div>
+
+                <!-- Contact Badges / Placeholders -->
+                <div class="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-darkBg p-4 rounded-xl border border-cardBorder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-accentGold/10 flex items-center justify-center text-accentGold">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-mono text-gray-500 uppercase block">Direct Email</span>
+                            <a href="mailto:stuartdocherty@gmail.com" class="text-xs text-white hover:text-accentGold font-medium transition-colors">
+                                stuartdocherty@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-darkBg p-4 rounded-xl border border-cardBorder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-accentGold/10 flex items-center justify-center text-accentGold">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-mono text-gray-500 uppercase block">Official Web</span>
+                            <a href="#" class="text-xs text-white hover:text-accentGold font-medium transition-colors">
+                                stuartdocherty.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Note -->
+            <div class="mt-12 pt-8 border-t border-cardBorder flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 Stuart Docherty. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/sdochertymusic/" class="hover:text-accentGold"><i class="fa-brands fa-instagram text-base"></i></a>
+                    <a href="https://www.facebook.com/sdochertymusic/" class="hover:text-accentGold"><i class="fa-brands fa-facebook text-base"></i></a>
+                    <a href="https://open.spotify.com/artist/5qwH9gKvchSfuv8V6pBU71" class="hover:text-accentGold"><i class="fa-brands fa-spotify text-base"></i></a>
+                    <a href="https://www.youtube.com/@StuartDocherty" class="hover:text-accentGold"><i class="fa-brands fa-youtube text-base"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking menu items
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
